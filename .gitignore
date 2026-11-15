@@ -1,0 +1,27 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Model files
+models/*
+*.gguf
+*.safetensors
+*.bin
+
+# Data
+data/raw/*
+data/processed/*
+
+# Environment
+.env
+.env.*
+
+# React Native
+node_modules/
+.expo/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
