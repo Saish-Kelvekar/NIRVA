@@ -6,18 +6,26 @@ turned into training drafts, reviewed and approved.
 ## 1. Source inventory
 
 All current facts come from two official publishers. Every page below was
-read on 2026-11-19 and returned its full text.
+read on 2026-11-19 and returned its full text. S1, S2 and S5 were read again
+on 2026-11-20 for the Day 2 source audit (section 10).
 
 ### Canonical source pages
 
 | # | Publisher | Page | Canonical URL | Cited by |
 |---|-----------|------|---------------|----------|
-| S1 | Uttara Kannada District Administration | Dandeli Wildlife Sanctuary | https://uttarakannada.nic.in/en/tourist-place/dandeli-wildlife-sanctuary/ | FACT001, FACT006, FACT014, FACT018 |
-| S2 | Karnataka Tourism | Dandeli Wildlife Sanctuary | https://karnatakatourism.org/en/experiences/dandeli-wildlife-sanctuary | FACT002, FACT004, FACT011, FACT016, FACT019 |
+| S1 | Uttara Kannada District Administration | Dandeli Wildlife Sanctuary | https://uttarakannada.nic.in/en/tourist-place/dandeli-wildlife-sanctuary/ | FACT001, FACT006, FACT014, FACT018, FACT021, FACT022 |
+| S2 | Karnataka Tourism | Dandeli Wildlife Sanctuary | https://karnatakatourism.org/en/experiences/dandeli-wildlife-sanctuary | FACT002, FACT004, FACT005, FACT011, FACT016, FACT019, FACT020, FACT025 |
 | S3 | Karnataka Tourism | Kali Tiger Reserve | https://karnatakatourism.org/en/experiences/kali-tiger-reserve/ | FACT003, FACT007, FACT008, FACT010 |
-| S4 | Karnataka Tourism | Hornbills of Dandeli | https://karnatakatourism.org/en/experiences/hornbills-of-dandeli/ | FACT005, FACT009 |
-| S5 | Karnataka Tourism | Rafting in Dandeli | https://karnatakatourism.org/en/experiences/rafting-in-dandeli/ | FACT012, FACT013, FACT017 |
+| S4 | Karnataka Tourism | Hornbills of Dandeli | https://karnatakatourism.org/en/experiences/hornbills-of-dandeli/ | FACT009 |
+| S5 | Karnataka Tourism | Rafting in Dandeli | https://karnatakatourism.org/en/experiences/rafting-in-dandeli/ | FACT012, FACT013 (rejected, superseded), FACT017, FACT026 |
 | S6 | Karnataka Tourism | Kayaking in Dandeli | https://karnatakatourism.org/en/experiences/kayaking-in-dandeli/ | FACT015 |
+
+### Evaluated and not registered
+
+| Site | Evaluated | Reason not registered |
+|------|-----------|-----------------------|
+| https://kalitigerreserve.org | 2026-11-20 (Day 2 audit, proposed as "S7") | Official provenance not verified. The visible text never says the site is an official or Karnataka Forest Department website. It has no `.gov.in` / `.nic.in` link or government emblem, and its footer reads "© Kali Tiger Reserve, All Rights Reserved \| Digital Partner - Tecobytes". It sells stays ("Starts just at ₹ 550/-") with booking on kalitigerreserve.store. Do not cite it unless an official government page confirms it as the reserve's site. |
+| https://www.junglelodges.com/resort/kali-adventure-camp/ | Not evaluated | Proposed as "S8" by the audit, but it was outside the approved Day 2 scope. |
 
 ### Duplicate pages (do not cite)
 
@@ -222,7 +230,8 @@ ai/.venv/Scripts/python.exe ai/training/tests/run_all.py
 |-------|--------|
 | `test_pipeline.py` | Review workflow: approve / reject / unreviewed, stale approvals, reviewed edits, duplicates, system-prompt migration. Runs on temporary copies of `data/` with review decisions reset, so it keeps working as the real review progresses. |
 | `test_golden.py` | Stage 0 baseline (2026-11-20): pinned `make_example_id`, `content_hash` and `normalise_text` values for all 33 real examples plus edge and non-ASCII inputs; byte-identical snapshots of `approved_dataset.py` and `prepare_final_dataset.py`; manifest compatibility (28 approved, 2 rejected, 0 stale, 0 orphaned; old minimal-field entries still work); live check that `approved_train.jsonl` and `final_train.jsonl` equal a fresh rebuild and that every baseline draft and manifest entry is unchanged. |
-| `run_all.py` | Runs both suites and fails if any file under `data/` was changed, added or removed during the run. |
+| `test_quality_checks.py` | The advisory checks in `quality_checks.py` and the `dataset_report.py` CLI, on synthetic data in temporary folders, plus read-only regression checks on the baseline fixtures (section 6.8). |
+| `run_all.py` | Runs every suite and fails if any file under `data/` was changed, added or removed during the run. |
 
 The baseline fixtures in `ai/training/tests/fixtures/baseline_2026-11-20/`
 are frozen copies of the Stage 0 inputs and outputs, with `golden.json`
@@ -247,15 +256,64 @@ in `data/generated_drafts.jsonl`. A new output file therefore holds only new
 drafts, and reviewed or hand-corrected drafts are never duplicated or
 replaced.
 
+### 6.8 Dataset quality report (advisory)
+
+```
+ai/.venv/Scripts/python.exe ai/training/dataset_report.py
+ai/.venv/Scripts/python.exe ai/training/dataset_report.py --dataset data/generated_drafts.jsonl
+```
+
+`dataset_report.py` runs the checks in `ai/training/quality_checks.py` and
+prints a report: counts, knowledge/behaviour share, examples per fact,
+answer repetition and lengths, exact and near-duplicate questions,
+unsupported entity indicators, evaluation overlap, traceability, and a
+numbered list of warnings for human review. Defaults: `data/final_train.jsonl`
+checked against `raw_facts.json`, `review_manifest.json` and
+`nirva_eval.json`.
+
+- **Advisory only.** It never changes, removes, merges, approves or rejects
+  anything, and no pipeline script calls it. It writes nothing unless
+  `--json FILE` is given, and then only to a new file.
+- **Warnings** need a person to look; **info** notes are context.
+- **Provisional thresholds** (calibrated on the 30 baseline drafts only):
+  near-duplicate when same-fact character 3-gram Jaccard ≥ 0.60 or
+  content-word Jaccard ≥ 0.75, or different-fact character ≥ 0.50; eval
+  overlap at character ≥ 0.50 or content-word ≥ 0.75; an answer text used
+  more than 4 times; a fact with more than 2× the median examples;
+  behaviour share outside 12–25%.
+- **Behaviour share is dataset-aware.** The 12–25% target applies to the
+  final dataset. It is checked for `final` inputs (where zero behaviour
+  examples is flagged) and for any input that contains behaviour examples.
+  For drafts or approved-only files without behaviour examples the report
+  says "Not applicable — behaviour examples are not present in this
+  dataset" and calculates no percentage.
+- **Entity indicators are heuristic.** Capitalised names and numbers are
+  compared with the linked fact's text and publisher (behaviour examples:
+  only Dandeli, Uttara Kannada, Karnataka, India). Lowercase names (animals,
+  birds) are not detected. A flag means "not found in the recorded fact",
+  not "false": the source page may still support it.
+- **Eval overlap compares wording only.** Questions that ask the same thing
+  in different words are not detected.
+
 ## 7. Unresolved conflicts register
 
 | Topic | Source A | Source B | Status |
 |-------|----------|----------|--------|
 | Nearest railway station | S1: "Nearest Railway Station at Alnavar junction" (visible text) | Embedded, non-visible base64 content on Karnataka Tourism `/attractions/` pages: "Londa is the nearest railway station ( 35 Kms )" (hornbills page) and "Hubli Railway Station is the nearest railway station ( 112 Kms )" (Kali Tiger Reserve page). These were hand-decoded and are unconfirmed. | FACT014 set to `needs_review` and excluded until an official source settles it. |
-| Dandeli Wildlife Sanctuary area | S1: "The sanctuary now covers an area of 834.16 square kilometres." (page last updated 26.12.2022) | S3: "Dandeli Wildlife Sanctuary (475.018 Km²)" | No fact recorded. Do not add an area fact until the difference is explained (e.g. by a Forest Department notification). |
+| Dandeli Wildlife Sanctuary area | S1: "The sanctuary now covers an area of 834.16 square kilometres." (page last updated 26.12.2022) | S3: "Dandeli Wildlife Sanctuary (475.018 Km²)" | No fact recorded. Do not add an area fact until the difference is explained (e.g. by a Forest Department notification). FACT022 (S1: "This sanctuary is the second largest wildlife sanctuary of Karnataka.") depends on the area, so it stays `needs_review` until this is resolved. |
 
-Other facts still `needs_review` because the cited page only partly
-supports their wording: FACT005 and FACT013. See their `verification_note`.
+FACT005 still has only partial support. On 2026-11-20 it was re-cited from S4
+to S2, which says "The sanctuary is a haven for diverse flora and fauna." and
+"Over 300 bird species call Dandeli home." S2 does not mention hornbills, so
+the fact stays `needs_review` until a superseding fact is worded as S2 states it.
+
+FACT013 is `rejected`. It was superseded on 2026-11-20 by FACT026, which uses
+S5's wording ("dam water levels", not "river water levels"). FACT013's text was
+left unchanged so that its existing drafts and review entries stay consistent.
+
+FACT020, FACT021, FACT022, FACT025 and FACT026 are `needs_review` candidates
+from the Day 2 audit. Each records its exact page quote and waits for the
+project owner's confirmation (section 10).
 
 FACT010 is `verified`: the project owner independently checked its source
 and confirmed the status on 2026-11-20. FACT016–FACT019 are `verified`: the
@@ -333,3 +391,45 @@ No drafts were generated and no review decisions or fact statuses were changed.
 - `nirva_eval.json` overlaps the training data (4 of 6 questions are close
   to training questions). A separate `nirva_eval_v2.json` is planned; the
   existing file stays unchanged.
+
+### 2026-11-20: Day 2 source audit
+
+Only `raw_facts.json` and this file changed. No drafts were generated, and
+no review decisions or training files were changed.
+
+**Method.** The audit document proposing these changes quoted page text it
+had not read. Its quotes came from AI-generated web-search summaries that mixed
+official pages with third-party sites. Those quotes were not accepted as
+evidence. Every claim was re-checked against the visible text of the cited
+page, fetched directly on 2026-11-20. Hidden, embedded and alt-text content
+was ignored.
+
+| Audit item | Outcome | Evidence (visible text) |
+|------------|---------|-------------------------|
+| FACT013 wording | Superseded by **FACT026** (`needs_review`); FACT013 set to `rejected`, text unchanged | S5: "Pre-booking is advised, and slots are allocated based on dam water levels and forest department clearance." |
+| FACT005 citation | Re-cited S4 → S2; stays `needs_review` (hornbills not on S2) | S2: "The sanctuary is a haven for diverse flora and fauna." |
+| FACT014 | Unchanged: `needs_review`, conflict open (section 7) | S1 still: "Nearest Railway Station at Alnavar junction" |
+| "S7" kalitigerreserve.org | **Not registered**: provenance not verified (section 1) | No official or Forest Department statement on the site |
+| FACT020 Shiroli Peak | Added, `needs_review`. The audit's "located within the sanctuary" was dropped as unsupported. | S2: "Shiroli Peak offers panoramic views of the Western Ghats." |
+| FACT021 Road distances | Added, `needs_review` | S1: "By road : Dharwad – 57 Kms, Hubballi – 72 Kms" |
+| FACT022 Second largest | Added, `needs_review`, linked to the area conflict | S1: "This sanctuary is the second largest wildlife sanctuary of Karnataka." |
+| FACT023 Kulgi Nature Camp | **Not added**: its only source is the unverified site, which also does not say who manages the camp | — |
+| FACT024 Crocodile Park | **Not added**: not on S2, and not in S1's visible text | — |
+| FACT025 Coracle rides | Added, `needs_review`. The audit's "traditional" was dropped as unsupported. | S2: river activities list including "Coracle rides" |
+
+**IDs.** FACT023 and FACT024 were proposed but not added. They are reserved
+and must never be reused. The fact base now holds 24 records: 16 `verified`,
+7 `needs_review` and 1 `rejected`.
+
+**Training data.** No change. New and `needs_review` facts have no drafts. A
+verified fact enters training only after drafts are generated, reviewed and
+approved.
+
+**Pending human action:**
+
+- Confirm or reject the candidates FACT020, FACT021, FACT025 and FACT026
+  against their pages. FACT022 waits on the area conflict.
+- FACT012 (`verified`, in training) says "designated stretches of the Kali
+  River". S5 says "Rafting is conducted on regulated stretches of the Kali
+  River". The meaning is close but the wording differs. Decide whether it
+  needs a superseding fact.

@@ -51,11 +51,11 @@
     "topic": "nature",
     "fact": "Dandeli Wildlife Sanctuary supports diverse wildlife and bird species, including hornbills.",
     "source": "Karnataka Tourism",
-    "source_url": "https://karnatakatourism.org/en/experiences/hornbills-of-dandeli/",
+    "source_url": "https://karnatakatourism.org/en/experiences/dandeli-wildlife-sanctuary",
     "confidence": "high",
     "time_sensitive": false,
     "status": "needs_review",
-    "verification_note": "Cited hornbill page only says 'Dandeli in Karnataka is the most popular place to spot hornbills'; it does not name the sanctuary or describe diverse wildlife. The Dandeli Wildlife Sanctuary experience page says 'The sanctuary is a haven for diverse flora and fauna.' Consider re-citing."
+    "verification_note": "Re-cited 2026-11-20 from the hornbills page (S4) to S2. S2 visible text (fetched 2026-11-20): 'The sanctuary is a haven for diverse flora and fauna.' and 'Over 300 bird species call Dandeli home.' S2 does not mention hornbills, so the 'including hornbills' clause is still not supported by the cited page; kept needs_review. A fix needs a superseding fact worded as S2 states it. Earlier note: S4 only says 'Dandeli in Karnataka is the most popular place to spot hornbills' and does not name the sanctuary or describe diverse wildlife."
   },
   {
     "id": "FACT006",
@@ -145,8 +145,8 @@
     "source_url": "https://karnatakatourism.org/en/experiences/rafting-in-dandeli/",
     "confidence": "high",
     "time_sensitive": true,
-    "status": "needs_review",
-    "verification_note": "Cited page says 'slots are allocated based on dam water levels and forest department clearance' (dam, not river, water levels)."
+    "status": "rejected",
+    "verification_note": "Cited page says 'slots are allocated based on dam water levels and forest department clearance' (dam, not river, water levels). Superseded by FACT026 on 2026-11-20 (owner decision): the wording is corrected there; this record's text is kept unchanged so its existing drafts and review entries stay consistent and excluded."
   },
   {
     "id": "FACT014",
@@ -178,7 +178,7 @@
     "source": "Karnataka Tourism",
     "source_url": "https://karnatakatourism.org/en/experiences/dandeli-wildlife-sanctuary",
     "confidence": "medium",
-    "time_sensitive": false,
+    "time_sensitive": true,
     "status": "verified",
     "verification_note": "Candidate. Page text: 'The ideal time to visit Dandeli Wildlife Sanctuary is from October to March.'"
   },
@@ -200,7 +200,7 @@
     "source": "Uttara Kannada District Administration",
     "source_url": "https://uttarakannada.nic.in/en/tourist-place/dandeli-wildlife-sanctuary/",
     "confidence": "medium",
-    "time_sensitive": false,
+    "time_sensitive": true,
     "status": "verified",
     "verification_note": "Candidate. Page text: 'Nearest Airport Hubli'."
   },
@@ -214,5 +214,60 @@
     "time_sensitive": true,
     "status": "verified",
     "verification_note": "Candidate. Page text: 'Embark on an open jeep safari deep into the forest. This is the best way to spot wildlife.'"
+  },
+  {
+    "id": "FACT020",
+    "category": "attractions",
+    "fact": "Karnataka Tourism states that Shiroli Peak offers panoramic views of the Western Ghats.",
+    "source": "Karnataka Tourism",
+    "source_url": "https://karnatakatourism.org/en/experiences/dandeli-wildlife-sanctuary",
+    "confidence": "medium",
+    "time_sensitive": false,
+    "status": "verified",
+    "verification_note": "Candidate (Day 2 audit). Page text fetched 2026-11-20: 'Shiroli Peak offers panoramic views of the Western Ghats.' The page does not say where Shiroli Peak is located, so no location is claimed."
+  },
+  {
+    "id": "FACT021",
+    "category": "travel",
+    "fact": "The Uttara Kannada District Administration lists road distances to Dandeli Wildlife Sanctuary of 57 km from Dharwad and 72 km from Hubballi.",
+    "source": "Uttara Kannada District Administration",
+    "source_url": "https://uttarakannada.nic.in/en/tourist-place/dandeli-wildlife-sanctuary/",
+    "confidence": "medium",
+    "time_sensitive": true,
+    "status": "verified",
+    "verification_note": "Candidate (Day 2 audit). Page text fetched 2026-11-20, 'How to Reach' section: 'By road : Dharwad – 57 Kms, Hubballi – 72 Kms'. Page last updated 26.12.2022."
+  },
+  {
+    "id": "FACT022",
+    "category": "geography",
+    "fact": "The Uttara Kannada District Administration states that Dandeli Wildlife Sanctuary is the second largest wildlife sanctuary in Karnataka.",
+    "source": "Uttara Kannada District Administration",
+    "source_url": "https://uttarakannada.nic.in/en/tourist-place/dandeli-wildlife-sanctuary/",
+    "confidence": "medium",
+    "time_sensitive": false,
+    "status": "needs_review",
+    "verification_note": "Candidate (Day 2 audit). Page text fetched 2026-11-20: 'This sanctuary is the second largest wildlife sanctuary of Karnataka.' Kept needs_review (owner decision): a size ranking depends on the sanctuary area, which is an unresolved conflict (S1: 834.16 square kilometres; S3: 475.018 Km²; see sources.md section 7)."
+  },
+  {
+    "id": "FACT025",
+    "category": "activities",
+    "fact": "Karnataka Tourism lists coracle rides among the river activities the Kali River provides in Dandeli Wildlife Sanctuary.",
+    "source": "Karnataka Tourism",
+    "source_url": "https://karnatakatourism.org/en/experiences/dandeli-wildlife-sanctuary",
+    "confidence": "medium",
+    "time_sensitive": false,
+    "status": "verified",
+    "verification_note": "Candidate (Day 2 audit). Page text fetched 2026-11-20: under 'River Activities: The Kali River flows through the sanctuary. It provides opportunities for:' the list includes 'Coracle rides'. The audit's word 'traditional' is not on the page and was dropped."
+  },
+  {
+    "id": "FACT026",
+    "category": "activities",
+    "fact": "Karnataka Tourism states that white-water rafting slots in Dandeli are allocated based on dam water levels and forest department clearance.",
+    "source": "Karnataka Tourism",
+    "source_url": "https://karnatakatourism.org/en/experiences/rafting-in-dandeli/",
+    "confidence": "medium",
+    "time_sensitive": true,
+    "status": "verified",
+    "verification_note": "Supersedes FACT013 (Day 2 audit). Page text fetched 2026-11-20: 'Pre-booking is advised, and slots are allocated based on dam water levels and forest department clearance.'"
   }
 ]
