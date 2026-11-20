@@ -23,7 +23,7 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, str(TESTS))
 from test_golden import diff_checksums, tree_checksums  # noqa: E402
 
-SUITES = ("test_pipeline.py", "test_golden.py")
+SUITES = ("test_pipeline.py", "test_golden.py", "test_quality_checks.py")
 
 
 def main():
