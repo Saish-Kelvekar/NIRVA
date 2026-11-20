@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "category": "tourism",
+        "question": "What activities can tourists explore in Dandeli?",
+        "response": "Tourists in Dandeli can explore various activities such as visiting historical sites like the Dandeli Fort and the Dandeli Palace, exploring the nearby temples and shrines, trying local cuisine like dal makhani and samosas, taking a boat tour to see the riverbank views, and engaging in cultural activities like attending traditional festivals and participating in outdoor sports.",
+        "generated_tokens": 75,
+        "generation_time_seconds": 9.42,
+        "tokens_per_second": 7.96
+    },
+    {
+        "id": 2,
+        "category": "tourism",
+        "question": "What is Dandeli known for?",
+        "response": "Dandeli is a city in the state of Karnataka, India. It is known for its rich cultural heritage and historical significance. The city has a vibrant arts scene, with many museums, galleries, and theaters showcasing local and international art. Additionally, Dandeli is home to several temples and shrines that offer visitors a glimpse into the region's ancient religious practices.",
+        "generated_tokens": 75,
+        "generation_time_seconds": 8.89,
+        "tokens_per_second": 8.44
+    },
+    {
+        "id": 3,
+        "category": "local",
+        "question": "What should a resident consider when looking for local services in Dandeli?",
+        "response": "When considering local services in Dandeli, residents should look for reliable and affordable options. Here are some key considerations:\n\n1. **Local Government Services**: The government of Dandeli offers various services such as utilities (water, electricity), healthcare, education, and social welfare. It is advisable to check if these services are available at your current address.\n\n2. **Community Centers and Libraries**: These facilities provide essential services like counseling, information, and community events. They can be found in major areas like the city center, residential areas, and rural areas.\n\n3. **Healthcare Providers**: Local hospitals and clinics offer basic medical care. It’s important to choose providers that have good reviews from previous patients.\n\n4. **Educational Institutions**: Schools",
+        "generated_tokens": 150,
+        "generation_time_seconds": 19.08,
+        "tokens_per_second": 7.86
+    },
+    {
+        "id": 4,
+        "category": "factual",
+        "question": "What is the current entry fee for a particular Dandeli wildlife activity?",
+        "response": "I'm sorry, but I don't have specific information about the current entry fee for a particular Dandeli wildlife activity. The entry fee can vary depending on the location and type of activity. It would be best to check with the relevant authorities or tourism boards in Dandeli for up-to-date information on the entry fee for any wildlife activities taking place at that location.",
+        "generated_tokens": 76,
+        "generation_time_seconds": 10.67,
+        "tokens_per_second": 7.12
+    },
+    {
+        "id": 5,
+        "category": "out_of_domain",
+        "question": "Explain how quantum computing works.",
+        "response": "Quantum computing is a type of computing that uses quantum-mechanical phenomena, such as superposition and entanglement, to perform operations on data. Unlike classical computers, which use bits (1s and 0s) to represent information, quantum computers use quantum bits, or qubits, which can exist in multiple states simultaneously. This allows quantum computers to process large amounts of data much faster than classical computers. Additionally, quantum computers can solve certain problems more efficiently than classical computers by leveraging the unique properties of quantum mechanics.",
+        "generated_tokens": 107,
+        "generation_time_seconds": 15.49,
+        "tokens_per_second": 6.91
+    },
+    {
+        "id": 6,
+        "category": "uncertainty",
+        "question": "What is the phone number of a local business if you do not have verified information?",
+        "response": "I'm sorry, but I can't assist with that.",
+        "generated_tokens": 13,
+        "generation_time_seconds": 2.18,
+        "tokens_per_second": 5.96
+    }
+]

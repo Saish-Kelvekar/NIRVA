@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "category": "tourism",
+        "question": "What activities can tourists explore in Dandeli?",
+        "response": "Tourists in Dandeli can explore activities such as visiting historical sites, enjoying local cuisine, and participating in cultural events.",
+        "generated_tokens": 26,
+        "generation_time_seconds": 6.15,
+        "tokens_per_second": 4.23
+    },
+    {
+        "id": 2,
+        "category": "tourism",
+        "question": "What is Dandeli known for?",
+        "response": "Dandeli is a district in Karnataka, India, known for its rich cultural heritage, traditional festivals, and historical significance. It is famous for the Dandeli Festival, which celebrates the region's heritage and is held annually. Additionally, Dandeli is home to several historical sites and landmarks that reflect its rich history and traditions.",
+        "generated_tokens": 68,
+        "generation_time_seconds": 14.77,
+        "tokens_per_second": 4.6
+    },
+    {
+        "id": 3,
+        "category": "local",
+        "question": "What should a resident consider when looking for local services in Dandeli?",
+        "response": "When looking for local services in Dandeli, a resident should consider factors such as accessibility, reliability, and cost. It's important to check the availability of services and ensure they are easily accessible to the community.",
+        "generated_tokens": 44,
+        "generation_time_seconds": 9.26,
+        "tokens_per_second": 4.75
+    },
+    {
+        "id": 4,
+        "category": "factual",
+        "question": "What is the current entry fee for a particular Dandeli wildlife activity?",
+        "response": "The current entry fee for a particular Dandeli wildlife activity is not specified in the provided information. If you have a specific activity in mind, please provide more details so I can assist you accurately.",
+        "generated_tokens": 41,
+        "generation_time_seconds": 8.45,
+        "tokens_per_second": 4.85
+    },
+    {
+        "id": 5,
+        "category": "out_of_domain",
+        "question": "Explain how quantum computing works.",
+        "response": "Quantum computing operates on principles different from classical computing. It uses quantum bits (qubits) that can exist in a superposition of states (0 and 1 simultaneously) and entanglement, allowing quantum computers to process a vast number of possibilities at once. Unlike classical computers, which use binary bits, quantum computers leverage quantum mechanics to solve complex problems more efficiently.",
+        "generated_tokens": 75,
+        "generation_time_seconds": 13.98,
+        "tokens_per_second": 5.36
+    },
+    {
+        "id": 6,
+        "category": "uncertainty",
+        "question": "What is the phone number of a local business if you do not have verified information?",
+        "response": "I cannot provide a phone number for a local business without verified information. Please check with the business directly or use a phone number lookup service.",
+        "generated_tokens": 29,
+        "generation_time_seconds": 6.2,
+        "tokens_per_second": 4.68
+    }
+]

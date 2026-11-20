@@ -1,0 +1,441 @@
+{
+  "description": "Pinned outputs of make_example_id, content_hash and normalise_text at the Stage 0 baseline (2026-11-20). Recorded from the unmodified functions. Never edit by hand; a mismatch means pipeline behaviour changed.",
+  "normalise_text_cases": [
+    {
+      "input": "  Where IS   Dandeli?? ",
+      "output": "where is dandeli"
+    },
+    {
+      "input": "Hello!!!",
+      "output": "hello"
+    },
+    {
+      "input": "Tab\tand\nnewline.",
+      "output": "tab and newline"
+    },
+    {
+      "input": "...",
+      "output": ""
+    },
+    {
+      "input": "",
+      "output": ""
+    },
+    {
+      "input": "Trailing space ? ",
+      "output": "trailing space"
+    },
+    {
+      "input": "Mid. punctuation. kept.",
+      "output": "mid. punctuation. kept"
+    },
+    {
+      "input": "Kāli River?",
+      "output": "kāli river"
+    },
+    {
+      "input": "ALL CAPS QUESTION",
+      "output": "all caps question"
+    },
+    {
+      "input": "no punctuation",
+      "output": "no punctuation"
+    },
+    {
+      "input": "Ends with comma,",
+      "output": "ends with comma,"
+    },
+    {
+      "input": "Question?!",
+      "output": "question"
+    },
+    {
+      "input": "  leading spaces only",
+      "output": "leading spaces only"
+    }
+  ],
+  "hash_cases": [
+    {
+      "source_fact_id": "FACT999",
+      "question": "Where is Kāli River?",
+      "answer": "Synthetic answer with diacritic ā.",
+      "example_id": "FACT999-a4c3a34d",
+      "content_hash": "d36f157e9ad08e5e"
+    },
+    {
+      "source_fact_id": "FACT999",
+      "question": "ಕಾಳಿ ನದಿ ಎಲ್ಲಿದೆ?",
+      "answer": "ಕಾಳಿ",
+      "example_id": "FACT999-f0b0f0a2",
+      "content_hash": "e170afd6a501d423"
+    },
+    {
+      "source_fact_id": "BEHAVIOUR999",
+      "question": "Quote \"marks\" and \\ backslash?",
+      "answer": "Tab\tand newline\nin answer.",
+      "example_id": "BEHAVIOUR999-d83d372d",
+      "content_hash": "65314da592abba58"
+    },
+    {
+      "source_fact_id": "",
+      "question": "",
+      "answer": "",
+      "example_id": "-e3b0c442",
+      "content_hash": "39623ca591e0c65a"
+    }
+  ],
+  "examples": [
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT001",
+      "question": "Where is Dandeli located?",
+      "answer": "Dandeli is located in Uttara Kannada district, Karnataka, India.",
+      "normalised_question": "where is dandeli located",
+      "example_id": "FACT001-83d8e2c8",
+      "content_hash": "8e54f51e047520e1"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT001",
+      "question": "Which district does Dandeli belong to?",
+      "answer": "Dandeli is located in Uttara Kannada district, Karnataka, India.",
+      "normalised_question": "which district does dandeli belong to",
+      "example_id": "FACT001-410853f6",
+      "content_hash": "19a7929e328b1a10"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT002",
+      "question": "Which river flows through Dandeli Wildlife Sanctuary?",
+      "answer": "The Kali River flows through the Dandeli Wildlife Sanctuary.",
+      "normalised_question": "which river flows through dandeli wildlife sanctuary",
+      "example_id": "FACT002-75a79056",
+      "content_hash": "296097d7695ae7bc"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT002",
+      "question": "What river is associated with Dandeli Wildlife Sanctuary?",
+      "answer": "The Kali River flows through the Dandeli Wildlife Sanctuary.",
+      "normalised_question": "what river is associated with dandeli wildlife sanctuary",
+      "example_id": "FACT002-fc46fc36",
+      "content_hash": "e266008ba6e39e66"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT003",
+      "question": "Which tiger reserve includes Dandeli Wildlife Sanctuary?",
+      "answer": "Dandeli Wildlife Sanctuary is part of the Kali Tiger Reserve.",
+      "normalised_question": "which tiger reserve includes dandeli wildlife sanctuary",
+      "example_id": "FACT003-b4db78cb",
+      "content_hash": "aeb0b9cc4531506d"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT003",
+      "question": "Is Dandeli Wildlife Sanctuary part of Kali Tiger Reserve?",
+      "answer": "Dandeli Wildlife Sanctuary is part of the Kali Tiger Reserve.",
+      "normalised_question": "is dandeli wildlife sanctuary part of kali tiger reserve",
+      "example_id": "FACT003-00bf77b4",
+      "content_hash": "2ffad0a20ab0d8ef"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT004",
+      "question": "What activities can tourists enjoy in Dandeli?",
+      "answer": "Activities associated with Dandeli include white-water rafting, kayaking, coracle rides, wildlife safaris and birdwatching.",
+      "normalised_question": "what activities can tourists enjoy in dandeli",
+      "example_id": "FACT004-ecda0d59",
+      "content_hash": "9bf2bd2964a8b764"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT004",
+      "question": "What adventure and nature activities are associated with Dandeli?",
+      "answer": "Activities associated with Dandeli include white-water rafting, kayaking, coracle rides, wildlife safaris and birdwatching.",
+      "normalised_question": "what adventure and nature activities are associated with dandeli",
+      "example_id": "FACT004-f6771e5c",
+      "content_hash": "86939ed93ebe9965"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT005",
+      "question": "Which notable bird group is found in Dandeli Wildlife Sanctuary?",
+      "answer": "Dandeli Wildlife Sanctuary supports diverse wildlife and bird species, including hornbills.",
+      "normalised_question": "which notable bird group is found in dandeli wildlife sanctuary",
+      "example_id": "FACT005-855c13c8",
+      "content_hash": "10d64739e3db5419"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT005",
+      "question": "Are hornbills found in Dandeli Wildlife Sanctuary?",
+      "answer": "Dandeli Wildlife Sanctuary supports diverse wildlife and bird species, including hornbills.",
+      "normalised_question": "are hornbills found in dandeli wildlife sanctuary",
+      "example_id": "FACT005-cd60f414",
+      "content_hash": "39431c23c556f764"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT006",
+      "question": "When was Dandeli Wildlife Sanctuary declared a wildlife sanctuary?",
+      "answer": "The Dandeli forest was declared a National Wildlife Sanctuary in 1956.",
+      "normalised_question": "when was dandeli wildlife sanctuary declared a wildlife sanctuary",
+      "example_id": "FACT006-41f44fa1",
+      "content_hash": "3e6978ac379d437e"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT006",
+      "question": "In which year was Dandeli Wildlife Sanctuary declared a sanctuary?",
+      "answer": "The Dandeli forest was declared a National Wildlife Sanctuary in 1956.",
+      "normalised_question": "in which year was dandeli wildlife sanctuary declared a sanctuary",
+      "example_id": "FACT006-db5ee384",
+      "content_hash": "0fa029d235e7acea"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT007",
+      "question": "Which protected areas are part of Kali Tiger Reserve?",
+      "answer": "Kali Tiger Reserve comprises two protected areas: Dandeli Wildlife Sanctuary and Anshi National Park.",
+      "normalised_question": "which protected areas are part of kali tiger reserve",
+      "example_id": "FACT007-86a83693",
+      "content_hash": "8916d64a4ee850e4"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT007",
+      "question": "What is the relationship between Dandeli Wildlife Sanctuary and Anshi National Park?",
+      "answer": "Kali Tiger Reserve comprises two protected areas: Dandeli Wildlife Sanctuary and Anshi National Park.",
+      "normalised_question": "what is the relationship between dandeli wildlife sanctuary and anshi national park",
+      "example_id": "FACT007-eab5a982",
+      "content_hash": "df9be219c8c4525f"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT008",
+      "question": "Which animals are found in Kali Tiger Reserve?",
+      "answer": "Wildlife found in Kali Tiger Reserve includes tigers, leopards, elephants, bison, wild dogs, sambar, spotted deer, sloth bears and wild boar.",
+      "normalised_question": "which animals are found in kali tiger reserve",
+      "example_id": "FACT008-9854fd92",
+      "content_hash": "4bb98f5f301f7d54"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT008",
+      "question": "What wildlife does Kali Tiger Reserve support?",
+      "answer": "Wildlife found in Kali Tiger Reserve includes tigers, leopards, elephants, bison, wild dogs, sambar, spotted deer, sloth bears and wild boar.",
+      "normalised_question": "what wildlife does kali tiger reserve support",
+      "example_id": "FACT008-e7534e51",
+      "content_hash": "013f04f195f386dd"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT009",
+      "question": "How many South Indian hornbill species are visitors likely to see in Dandeli?",
+      "answer": "Karnataka Tourism states that visitors to Dandeli are likely to see all four South Indian hornbill species: Malabar Pied Hornbill, Malabar Grey Hornbill, Great Hornbill and Indian Grey Hornbill.",
+      "normalised_question": "how many south indian hornbill species are visitors likely to see in dandeli",
+      "example_id": "FACT009-f5942079",
+      "content_hash": "d65f4eb250704758"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT009",
+      "question": "What is notable about hornbill diversity in Kali Tiger Reserve?",
+      "answer": "Karnataka Tourism states that visitors to Dandeli are likely to see all four South Indian hornbill species: Malabar Pied Hornbill, Malabar Grey Hornbill, Great Hornbill and Indian Grey Hornbill.",
+      "normalised_question": "what is notable about hornbill diversity in kali tiger reserve",
+      "example_id": "FACT009-9606af01",
+      "content_hash": "0d0665bf612c85de"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT010",
+      "question": "What are Syntheri Rocks?",
+      "answer": "Syntheri Rocks is a natural attraction where the Kali River flows through sharp rocks, forming rapids.",
+      "normalised_question": "what are syntheri rocks",
+      "example_id": "FACT010-831f561a",
+      "content_hash": "215c2fcb3de4ce00"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT010",
+      "question": "Is Syntheri Rocks a natural attraction in the Kali Tiger Reserve region?",
+      "answer": "Syntheri Rocks is a natural attraction where the Kali River flows through sharp rocks, forming rapids.",
+      "normalised_question": "is syntheri rocks a natural attraction in the kali tiger reserve region",
+      "example_id": "FACT010-a4b9ebb6",
+      "content_hash": "7e3784ae0dee9b74"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT011",
+      "question": "What are Kavala Caves known for?",
+      "answer": "Kavala Caves are a natural attraction in the Dandeli region, known for their stalagmite formations.",
+      "normalised_question": "what are kavala caves known for",
+      "example_id": "FACT011-5b37c817",
+      "content_hash": "8be73157f996e72d"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT011",
+      "question": "What natural formations can be seen in Kavala Caves?",
+      "answer": "Kavala Caves are a natural attraction in the Dandeli region, known for their stalagmite formations.",
+      "normalised_question": "what natural formations can be seen in kavala caves",
+      "example_id": "FACT011-a078b9d8",
+      "content_hash": "007195fb751a633a"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT012",
+      "question": "Where does white-water rafting take place in Dandeli?",
+      "answer": "White-water rafting in Dandeli takes place on designated stretches of the Kali River.",
+      "normalised_question": "where does white-water rafting take place in dandeli",
+      "example_id": "FACT012-e5883e35",
+      "content_hash": "5ee552a7cf228432"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT012",
+      "question": "Which river is used for white-water rafting in Dandeli?",
+      "answer": "White-water rafting in Dandeli takes place on designated stretches of the Kali River.",
+      "normalised_question": "which river is used for white-water rafting in dandeli",
+      "example_id": "FACT012-5d59b65e",
+      "content_hash": "8d2df76350f4876a"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT013",
+      "question": "What factors affect rafting operations in Dandeli?",
+      "answer": "The availability of white-water rafting in Dandeli depends on river water levels and forest department permissions.",
+      "normalised_question": "what factors affect rafting operations in dandeli",
+      "example_id": "FACT013-049cd50e",
+      "content_hash": "d9ecadc11d10b307"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT013",
+      "question": "Does rafting availability in Dandeli depend on river flow and permissions?",
+      "answer": "The availability of white-water rafting in Dandeli depends on river water levels and forest department permissions.",
+      "normalised_question": "does rafting availability in dandeli depend on river flow and permissions",
+      "example_id": "FACT013-1a2fbb53",
+      "content_hash": "49ac5618523b4da5"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT014",
+      "question": "Which railway station is identified for reaching Dandeli?",
+      "answer": "Alnavar Junction is the nearest railway station to Dandeli, according to the Uttara Kannada District Administration.",
+      "normalised_question": "which railway station is identified for reaching dandeli",
+      "example_id": "FACT014-5313cdcc",
+      "content_hash": "fd9ef820b57fd759"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT014",
+      "question": "Can travellers use Alnavar Junction to reach Dandeli?",
+      "answer": "Alnavar Junction is the nearest railway station to Dandeli, according to the Uttara Kannada District Administration.",
+      "normalised_question": "can travellers use alnavar junction to reach dandeli",
+      "example_id": "FACT014-c0c6ca12",
+      "content_hash": "45f62b9e09d91abc"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT015",
+      "question": "Where can visitors enjoy kayaking in Dandeli?",
+      "answer": "Kayaking is an activity offered on the Kali River in the Dandeli region.",
+      "normalised_question": "where can visitors enjoy kayaking in dandeli",
+      "example_id": "FACT015-b29df784",
+      "content_hash": "c7bcb7705476ffd8"
+    },
+    {
+      "origin": "generated_drafts.jsonl",
+      "source_fact_id": "FACT015",
+      "question": "Which river is associated with kayaking in Dandeli?",
+      "answer": "Kayaking is an activity offered on the Kali River in the Dandeli region.",
+      "normalised_question": "which river is associated with kayaking in dandeli",
+      "example_id": "FACT015-4e2504fc",
+      "content_hash": "92d96af2f13141aa"
+    },
+    {
+      "origin": "train.jsonl",
+      "source_fact_id": "BEHAVIOUR001",
+      "question": "What is the current rafting entry fee in Dandeli?",
+      "answer": "I don't have verified current pricing information. Fees may vary by activity and operator. Please confirm the price with the relevant activity provider before booking.",
+      "normalised_question": "what is the current rafting entry fee in dandeli",
+      "example_id": "BEHAVIOUR001-2474be68",
+      "content_hash": "a5a0036f8060bf7d"
+    },
+    {
+      "origin": "train.jsonl",
+      "source_fact_id": "BEHAVIOUR002",
+      "question": "Explain quantum computing.",
+      "answer": "I'm designed to help with information related to Dandeli and its local community. I can't provide a general explanation of quantum computing.",
+      "normalised_question": "explain quantum computing",
+      "example_id": "BEHAVIOUR002-51129a89",
+      "content_hash": "fb3505c1104f9180"
+    },
+    {
+      "origin": "train.jsonl",
+      "source_fact_id": "BEHAVIOUR003",
+      "question": "Give me the phone number of a Dandeli business.",
+      "answer": "I don't have a verified phone number for that business. Please check its official website or contact the business directly.",
+      "normalised_question": "give me the phone number of a dandeli business",
+      "example_id": "BEHAVIOUR003-89bb7516",
+      "content_hash": "6696cf5b63f6d183"
+    }
+  ],
+  "approved_ids": [
+    "FACT001-83d8e2c8",
+    "FACT001-410853f6",
+    "FACT002-75a79056",
+    "FACT002-fc46fc36",
+    "FACT003-b4db78cb",
+    "FACT003-00bf77b4",
+    "FACT004-ecda0d59",
+    "FACT004-f6771e5c",
+    "FACT006-41f44fa1",
+    "FACT006-db5ee384",
+    "FACT007-86a83693",
+    "FACT007-eab5a982",
+    "FACT008-9854fd92",
+    "FACT008-e7534e51",
+    "FACT009-f5942079",
+    "FACT010-831f561a",
+    "FACT011-5b37c817",
+    "FACT011-a078b9d8",
+    "FACT012-e5883e35",
+    "FACT012-5d59b65e",
+    "FACT015-b29df784",
+    "FACT015-4e2504fc"
+  ],
+  "final_ids": [
+    "FACT001-83d8e2c8",
+    "FACT001-410853f6",
+    "FACT002-75a79056",
+    "FACT002-fc46fc36",
+    "FACT003-b4db78cb",
+    "FACT003-00bf77b4",
+    "FACT004-ecda0d59",
+    "FACT004-f6771e5c",
+    "FACT006-41f44fa1",
+    "FACT006-db5ee384",
+    "FACT007-86a83693",
+    "FACT007-eab5a982",
+    "FACT008-9854fd92",
+    "FACT008-e7534e51",
+    "FACT009-f5942079",
+    "FACT010-831f561a",
+    "FACT011-5b37c817",
+    "FACT011-a078b9d8",
+    "FACT012-e5883e35",
+    "FACT012-5d59b65e",
+    "FACT015-b29df784",
+    "FACT015-4e2504fc",
+    "BEHAVIOUR001-2474be68",
+    "BEHAVIOUR002-51129a89",
+    "BEHAVIOUR003-89bb7516"
+  ],
+  "manifest_decisions": {
+    "approved": 28,
+    "rejected": 2
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "category": "tourism",
+    "question": "What activities can tourists explore in Dandeli?"
+  },
+  {
+    "id": 2,
+    "category": "tourism",
+    "question": "What is Dandeli known for?"
+  },
+  {
+    "id": 3,
+    "category": "local",
+    "question": "What should a resident consider when looking for local services in Dandeli?"
+  },
+  {
+    "id": 4,
+    "category": "factual",
+    "question": "What is the current entry fee for a particular Dandeli wildlife activity?"
+  },
+  {
+    "id": 5,
+    "category": "out_of_domain",
+    "question": "Explain how quantum computing works."
+  },
+  {
+    "id": 6,
+    "category": "uncertainty",
+    "question": "What is the phone number of a local business if you do not have verified information?"
+  }
+]

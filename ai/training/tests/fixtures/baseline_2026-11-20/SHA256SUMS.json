@@ -1,0 +1,9 @@
+{
+  "raw_facts.json": "9881dfd50350c8ccccd8fa7915ec3d94f641ed07c290bacc59dd06564230a3cf",
+  "generated_drafts.jsonl": "dc0e5dc5cd9648374e6e904779d780be9b8a9d4ae41e75eb8e9796fb34049e12",
+  "review_manifest.json": "be562fa5b03d3935bd6d87a2ec1bc608fce2a3df5b77b19cb1be9649b8001b5d",
+  "train.jsonl": "31ccf04200b68ef3d76e874182900eb82744a3cab637abbf30b16d745723e738",
+  "approved_train.jsonl": "416475269b736f76562477a79ac2e13aa04b48734fe0f3abaff688d65914e379",
+  "final_train.jsonl": "995e37159efee9a18952cb58169bf66af92adcd05f2bfa651692a9f13402a968",
+  "golden.json": "f0e9aaf7e7a874fa48338a8c061717344e7f4942538389b44f9ab9d261a7cc13"
+}
